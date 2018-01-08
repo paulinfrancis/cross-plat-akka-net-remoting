@@ -14,6 +14,12 @@ namespace NetCoreApp
                 akka {
                     actor {
                         provider = remote
+                        serializers {
+                          json = ""Common.CrossPlatformNewtonSoftJsonSerializer, Common""
+                        }
+                        serialization-identifiers {
+                          ""Common.CrossPlatformNewtonSoftJsonSerializer, Common"" = 1
+                        }
                     }
                     remote {
                         dot-netty.tcp {
