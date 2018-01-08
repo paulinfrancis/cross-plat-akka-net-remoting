@@ -9,11 +9,6 @@ namespace NetCoreApp
     {
         public TestActor()
         {
-            Become(WaitingForUserInput);
-        }
-
-        public void WaitingForUserInput()
-        {
             Receive<string>(msg =>
             {
                 var echoActorRef = Context.ActorSelection("akka.tcp://TestActorSystem@localhost:8888/user/Echo");
